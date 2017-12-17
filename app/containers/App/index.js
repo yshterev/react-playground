@@ -13,17 +13,28 @@
 
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
 
 import HomePage from 'containers/HomePage/Loadable';
+import TicTacToe from 'containers/TicTacToe/Loadable';
+import TrelloClone from 'containers/TrelloClone';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
+
+const AppWrapper = styled.div`
+  .main-container {
+    margin-top: 7rem;
+  }
+`;
 
 export default function App() {
   return (
-    <div>
+    <AppWrapper>
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/trello-clone" component={TrelloClone} />
+        <Route exact path="/tic-tac-toe" component={TicTacToe} />
         <Route component={NotFoundPage} />
       </Switch>
-    </div>
+    </AppWrapper>
   );
 }
