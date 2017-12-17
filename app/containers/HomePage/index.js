@@ -21,6 +21,7 @@ import { compose } from 'redux';
 
 import { createStructuredSelector } from 'reselect';
 import { makeSelectYanko } from './selectors';
+import { makeSelectLocation } from '../App/selectors';
 import { changeYanko } from './actions';
 import reducer from './reducer';
 
@@ -32,12 +33,12 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <title>Home page</title>
           <meta name="description" content="Description of Home page" />
         </Helmet>
-        <Menu fixed="top" inverted defaultActiveIndex="2">
+        <Menu fixed="top" inverted>
           <Container>
             <Menu.Item as="a" header>
               React Playground
             </Menu.Item>
-            <Menu.Item active as="div">
+            <Menu.Item active={this.props.location.pathname === '/'} as="div">
               <Link to="/">Home</Link>
             </Menu.Item>
             <Menu.Item as="div">
@@ -61,6 +62,7 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
 
 HomePage.propTypes = {
   yanko: PropTypes.string,
+  location: PropTypes.object,
   onChangeYanko: PropTypes.func,
 };
 
@@ -72,6 +74,7 @@ export function mapDispatchToProps(dispatch) {
 
 const mapStateToProps = createStructuredSelector({
   yanko: makeSelectYanko(),
+  location: makeSelectLocation(),
 });
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
