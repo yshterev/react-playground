@@ -12,8 +12,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { Container, Button, Header, Menu } from 'semantic-ui-react';
+import { Container, Button, Header } from 'semantic-ui-react';
 import injectReducer from 'utils/injectReducer';
 
 import { connect } from 'react-redux';
@@ -25,6 +24,8 @@ import { makeSelectLocation } from '../App/selectors';
 import { changeYanko } from './actions';
 import reducer from './reducer';
 
+import AppHeader from '../../components/AppHeader';
+
 class HomePage extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     return (
@@ -33,22 +34,8 @@ class HomePage extends React.PureComponent { // eslint-disable-line react/prefer
           <title>Home page</title>
           <meta name="description" content="Description of Home page" />
         </Helmet>
-        <Menu fixed="top" inverted>
-          <Container>
-            <Menu.Item as="a" header>
-              React Playground
-            </Menu.Item>
-            <Menu.Item active={this.props.location.pathname === '/'} as="div">
-              <Link to="/">Home</Link>
-            </Menu.Item>
-            <Menu.Item as="div">
-              <Link to="/tic-tac-toe">Tic-Tac-Toe</Link>
-            </Menu.Item>
-            <Menu.Item as="div">
-              <Link to="/trello-clone">Trello Clone</Link>
-            </Menu.Item>
-          </Container>
-        </Menu>
+
+        <AppHeader location={this.props.location.pathname} />
 
         <Container text className="main-container">
           <Header as="h1">Semantic UI React Fixed Template</Header>
@@ -68,7 +55,7 @@ HomePage.propTypes = {
 
 export function mapDispatchToProps(dispatch) {
   return {
-    onChangeYanko: (evt) => dispatch(changeYanko(evt.target)),
+    onChangeYanko: () => dispatch(changeYanko()),
   };
 }
 

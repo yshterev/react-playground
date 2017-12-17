@@ -23,7 +23,10 @@ const initialState = fromJS({
 function homeReducer(state = initialState, action) {
   switch (action.type) {
     case CHANGE_YANKO:
-      return state.set('yanko', 'James Bond');
+      if ((state.get('yanko') === 'Yanko Shterev')) {
+        return state.set('yanko', 'James Bond');
+      }
+      return state.set('yanko', 'Yanko Shterev');
     default:
       return state;
   }
