@@ -1,6 +1,6 @@
 // generateMoves needs React in scope
 import React from 'react';
-import { Button, List } from 'semantic-ui-react';
+import { List } from 'semantic-ui-react';
 
 function calculateWinner(squares) {
   const lines = [
