@@ -4,21 +4,21 @@ const TicTacToeWrapper = styled.div`
   ol, ul {
     padding-left: 30px;
   }
-  
+
   li {
     margin-bottom: 10px;
   }
-  
+
   .board-row:after {
     clear: both;
     content: "";
     display: table;
   }
-  
+
   .status {
     margin-bottom: 10px;
   }
-  
+
   .square {
     background: #fff;
     border: 1px solid #999;
@@ -33,25 +33,25 @@ const TicTacToeWrapper = styled.div`
     text-align: center;
     width: 34px;
   }
-  
+
   .square:focus {
     outline: none;
   }
-  
+
   .kbd-navigation .square:focus {
     background: #ddd;
   }
-  
+
   .game {
     display: flex;
     flex-direction: row;
   }
-  
+
   .game-info {
     width: 500px;
     margin-left: 20px;
   }
-  
+
   button {
     cursor: pointer;
     background: #eee;
@@ -59,15 +59,19 @@ const TicTacToeWrapper = styled.div`
     padding: 10px;
     outline: 0;
   }
-  
-  .bold {
+
+  #moves .bold {
     font-weight: bold;
     color: red;
   }
-  
+
   [data-wins="wins"] {
     background: green;
     color: white;
+  }
+
+  #order-button {
+    margin-left: 10px;
   }
 `;
 
