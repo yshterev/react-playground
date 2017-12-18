@@ -7,6 +7,12 @@ const makeSelectLocation = () => createSelector(
   (routeState) => routeState.get('location').toJS()
 );
 
+const makeSelectPath = () => createSelector(
+  selectRoute,
+  (routeState) => routeState.getIn(['location', 'pathname'])
+);
+
 export {
   makeSelectLocation,
+  makeSelectPath,
 };

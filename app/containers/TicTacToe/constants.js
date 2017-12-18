@@ -4,4 +4,4 @@
  *
  */
 
-export const DEFAULT_ACTION = 'app/TicTacToe/DEFAULT_ACTION';
+export const CLICK_BOARD = 'playground/TicTacToe/CLICK_BOARD';

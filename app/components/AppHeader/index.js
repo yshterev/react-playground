@@ -14,7 +14,6 @@ import PropTypes from 'prop-types';
 class AppHeader extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   render() {
     const location = this.props.location;
-
     return (
       <Menu fixed="top" inverted>
         <Container>
@@ -24,7 +23,7 @@ class AppHeader extends React.PureComponent { // eslint-disable-line react/prefe
           <Menu.Item active={location === '/'} as="div">
             <Link to="/">Home</Link>
           </Menu.Item>
-          <Menu.Item as="div">
+          <Menu.Item active={location === '/tic-tac-toe'} as="div">
             <Link to="/tic-tac-toe">Tic-Tac-Toe</Link>
           </Menu.Item>
           <Menu.Item as="div">

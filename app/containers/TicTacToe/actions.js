@@ -5,11 +5,12 @@
  */
 
 import {
-  DEFAULT_ACTION,
+  CLICK_BOARD,
 } from './constants';
 
-export function defaultAction() {
+export function clickBoard(i) {
   return {
-    type: DEFAULT_ACTION,
+    type: CLICK_BOARD,
+    i,
   };
 }

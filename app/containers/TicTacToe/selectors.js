@@ -14,12 +14,36 @@ const selectTicTacToeDomain = (state) => state.get('ticTacToe');
  * Default selector used by TicTacToe
  */
 
-const makeSelectTicTacToe = () => createSelector(
+const makeSelectTicTacHistory = () => createSelector(
   selectTicTacToeDomain,
-  (substate) => substate.toJS()
+  (substate) => substate.get('history').toJS()
 );
 
-export default makeSelectTicTacToe;
+const makeSelectTicTacWinner = () => createSelector(
+  selectTicTacToeDomain,
+  (substate) => substate.get('winner').toJS()
+);
+
+const makeSelectAscending = () => createSelector(
+  selectTicTacToeDomain,
+  (substate) => substate.get('ascending')
+);
+
+const makeSelectStepNumber = () => createSelector(
+  selectTicTacToeDomain,
+  (substate) => substate.get('stepNumber')
+);
+
+const makeSelectXIsNext = () => createSelector(
+  selectTicTacToeDomain,
+  (substate) => substate.get('xIsNext')
+);
+
 export {
   selectTicTacToeDomain,
+  makeSelectTicTacHistory,
+  makeSelectTicTacWinner,
+  makeSelectAscending,
+  makeSelectStepNumber,
+  makeSelectXIsNext,
 };
