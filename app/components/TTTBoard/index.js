@@ -8,15 +8,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TTTSquare from '../TTTSquare';
 
-// import styled from 'styled-components';
-
-
 class TTTBoard extends React.PureComponent { // eslint-disable-line react/prefer-stateless-function
   renderSquare(i) {
     const winner = this.props.winner;
     let wins = '';
 
-    if (winner && winner.positions.indexOf(i) !== -1) {
+    if (winner.player && winner.positions.indexOf(i) !== -1) {
       wins = 'wins';
     }
 

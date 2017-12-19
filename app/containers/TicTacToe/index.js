@@ -69,7 +69,7 @@ export class TicTacToe extends React.PureComponent { // eslint-disable-line reac
           <TicTacToeWrapper>
             <div className="game">
               <div className="game-board">
-                <TTTBoard squares={current.squares} onClick={(i) => this.props.handleClick(i)} />
+                <TTTBoard winner={this.props.winner} squares={current.squares} onClick={(i) => this.props.handleClick(i)} />
               </div>
               <div className="game-info">
                 <div>Move order: <OrderButton onClick={() => this.props.changeOrder()} ascending={ascending} /></div>
