@@ -21,3 +21,5 @@ describe('<TicTacToe />', () => {
     )).toEqual(true);
   });
 });
+
+console.log(3);
