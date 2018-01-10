@@ -9,4 +9,4 @@ All demo projects test covered.
 Run `yarn` (`npm install`) not tested, but should work, then `npm start`.
 
 Projects included:
-   - [WIP] Tic-Tac-Toe board game based on [official react tutorial](https://reactjs.org/tutorial/tutorial.html).
+   - [WIP] Tic-Tac-Toe board game based on the [official react tutorial](https://reactjs.org/tutorial/tutorial.html).

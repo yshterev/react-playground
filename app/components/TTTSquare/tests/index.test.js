@@ -1,10 +1,16 @@
-// import React from 'react';
-// import { shallow } from 'enzyme';
+import React from 'react';
+import { shallow } from 'enzyme';
 
-// import TTTSquare from '../index';
+import TTTSquare from '../index';
 
 describe('<TTTSquare />', () => {
-  it('Expect to have unit tests specified', () => {
-    expect(true).toEqual(false);
+  it('renders a <button> with class square', () => {
+    const renderedComponent = shallow(
+      <TTTSquare />
+    );
+    expect(
+      renderedComponent.find('button').hasClass('square')
+    ).toEqual(true);
   });
 });
+
